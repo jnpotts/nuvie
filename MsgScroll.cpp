@@ -495,7 +495,10 @@ bool MsgScroll::parse_token(MsgText *token)
 {
  MsgLine *msg_line;
 
- msg_line = msg_buf.back(); // retrieve the last line from the scroll buffer.
+ if (msg_buf.size() > 0)
+	msg_line = msg_buf.back(); // retrieve the last line from the scroll buffer.
+ else 
+	msg_line = NULL;
 
  switch(token->s[0])
    {
