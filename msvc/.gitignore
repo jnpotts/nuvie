@@ -1,0 +1,7 @@
+Debug
+Release
+packages
+.vs
+*.vc.opendb
+*.vc.db
+*.vcxproj.user

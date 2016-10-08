@@ -1,5 +1,5 @@
-#ifndef	__vc7inc_h__
-#define __vc7inc_h__
+#ifndef	__msvc_h__
+#define __msvc_h__
 
 /*
  *  vc7inc.h
@@ -24,7 +24,8 @@
  *
  */
 
-#define snprintf	_snprintf
+#define __func__ __FUNCTION__
+
 #define strcasecmp	_stricmp
 #define strdup		_strdup
 
@@ -41,24 +42,13 @@
 #pragma warning (disable : 4099)	//	'$' : type name first seen using 'class' now seen using 'struct'
 #pragma warning (disable : 4996)	//	'_strdup': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _strdup.
 
-//	for pre-compiled headers when I get all the #include issues fixed
-/*
-#include <iostream>
 
-#include "sys/types.h"
-#include "sys/stat.h"
-#include "SDL.h"
-#include "misc.h"
-*/
-
-// .NET has no roundf or nearbyint function (C99)
+#if _MSC_VER < 1600
 __inline float roundf (float val) { return fmod( val, 1.0f ) >= 0.5f ? ceilf (val) : floorf (val); }
 #define nearbyint roundf
-
 #define mkdir _mkdir
+#endif
 
-#define __func__ __FUNCTION__
 
-#define M_PI	3.1415926535897932384626433832795
 
-#endif	/* __vc7inc_h__ */
+#endif	/* __msvc_h__ */

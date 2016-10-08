@@ -9,8 +9,8 @@
 
 #if _MSC_VER < 1300
 #include "msvc/msvc_kludges.h"
-#elif _MSC_VER >= 1300
-#include "visualc7/vc7inc.h"
+#else
+#include "msvc/msvc.h"
 #endif
 
 #endif

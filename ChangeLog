@@ -1,4 +1,7 @@
 2016-10-07  James Potts <jamesnpotts at yahoo.com>
+	* Update windows build for VS2015.
+	* Merge old visualc7 dir into msvc dir.
+	* Replace windows dirent.[hc] with newer/safer implementation.
 	* Use intptr_t for iAVLkey, allowing 64-bit builds.
 
 2016-08-30  Eric Fry <efry at users.sourceforge.net>
