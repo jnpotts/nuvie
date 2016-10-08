@@ -32,7 +32,7 @@
 #define _IAVLTREE_H_
 
 /* typedef the keytype */
-typedef long iAVLKey;
+typedef intptr_t iAVLKey;
 
 /* Comparison function for integers is subtraction. */
 #define iAVLKey_cmp(tree, a, b) ((a) - (b))
